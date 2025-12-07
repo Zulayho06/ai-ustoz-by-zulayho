@@ -1,4 +1,4 @@
-import { Lesson, AppView } from './types';
+import { Lesson, AppView, QuizQuestion } from './types';
 import { BookOpen, Rocket, Bot, Sparkles, Gamepad2, Star } from 'lucide-react';
 
 export const LESSONS: Lesson[] = [
@@ -99,3 +99,134 @@ export const NAV_ITEMS = [
   { id: AppView.CHAT, label: 'Robo-Do\'st', icon: Bot },
   { id: AppView.QUIZ, label: 'O\'yin-Sinov', icon: Gamepad2 },
 ];
+
+// Local Data for Quiz and Explanations
+export const LOCAL_EXPLANATIONS: Record<string, string> = {
+  "Sehrli Kompyuter (AI Nima?)": "Kompyuter xuddi sehrgar kabi! U gapirishni, ko'rishni va sening do'sting bo'lishni o'rganadi. Bu sehr emas, bu ilm! ✨",
+  "Robotlar Maktabi (Machine Learning)": "Robotlar ham senga o'xshab maktabga borishadi. Faqat ular kitob o'qimaydi, balki minglab rasmlarni ko'rib o'rganishadi! 📚🤖",
+  "Super Miya (Neyron Tarmoqlar)": "Kompyuterning ichida milliardlab kichkina 'chiroqchalar' bor. Ular bir-biri bilan gaplashib, qiyin masalalarni yechishadi! 💡🧠",
+  "Rasmchi Robot (Generativ AI)": "Bu robotlar - haqiqiy rassom! Sen ularga nima chizishni aytsang, ular xuddi shu narsani chizib berishadi. 🎨🖌️",
+};
+
+export const LOCAL_QUIZ_DATA: Record<string, QuizQuestion[]> = {
+  "Sehrli Kompyuter (AI Nima?)": [
+    {
+      question: "AI (Sun'iy Intellekt) bu nima?",
+      options: ["Sehrli tayoqcha 🪄", "Aqlli kompyuter dasturi 💻", "Mazali muzqaymoq 🍦", "Uchadigan gilam 🧞‍♂️"],
+      correctAnswer: 1,
+      explanation: "AI - bu kompyuterga o'ylashni o'rgatadigan maxsus dastur."
+    },
+    {
+      question: "Tesla mashinasi nima qila oladi?",
+      options: ["Ucha oladi ✈️", "Haydovchisiz yura oladi 🚗", "Ovqat pishiradi 🍳", "Suzishni biladi 🏊"],
+      correctAnswer: 1,
+      explanation: "Tesla AI yordamida yo'lni ko'radi va o'zi haydovchisiz yuradi."
+    },
+    {
+      question: "Siri va Google kimlar?",
+      options: ["Mening sinfdoshlarim 🎒", "Ovozli yordamchilar 🗣️", "Multfilm qahramonlari 📺", "Kosmonavtlar 👨‍🚀"],
+      correctAnswer: 1,
+      explanation: "Ular sening savollaringga javob beradigan aqlli yordamchilardir."
+    }
+  ],
+  "Robotlar Maktabi (Machine Learning)": [
+    {
+      question: "Robotlar qanday o'rganadi?",
+      options: ["Kitob o'qiydi 📖", "Ko'p misollar ko'radi 🖼️", "Uxlaydi 😴", "Ovqat yeydi 🍔"],
+      correctAnswer: 1,
+      explanation: "Biz ularga ko'p rasm ko'rsatamiz, ular esa farqini topib o'rganishadi."
+    },
+    {
+      question: "Biz darsda robotga nimalarni ajratishni o'rgatdik?",
+      options: ["Mushuk va Kuchuk 🐱🐶", "Olma va Anor 🍎", "Tosh va Qaychi ✂️", "Quyosh va Oy ☀️"],
+      correctAnswer: 0,
+      explanation: "Darsda biz unga 1000 ta mushuk va kuchuk rasmini ko'rsatdik."
+    },
+    {
+      question: "Robot yangi rasmni ko'rsa nima qiladi?",
+      options: ["Yig'laydi 😭", "Taniydi va aytadi 🗣️", "Qochib ketadi 🏃", "Hech narsa qilmaydi 😐"],
+      correctAnswer: 1,
+      explanation: "O'rganganidan keyin u rasmda nima borligini aniq topa oladi."
+    }
+  ],
+  "Super Miya (Neyron Tarmoqlar)": [
+    {
+      question: "Neyronlar nima?",
+      options: ["Miya hujayralari 🧠", "Kichkina robotlar 🤖", "Kompyuter simlari 🔌", "Shirinliklar 🍬"],
+      correctAnswer: 0,
+      explanation: "Neyronlar - bu miyamizdagi ma'lumot tashuvchi kichik hujayralar."
+    },
+    {
+      question: "Kompyuter 'miyasi' qanday ishlaydi?",
+      options: ["Benzin bilan ⛽", "Qavatma-qavat o'ylash orqali 🏢", "Sehr bilan ✨", "Suv bilan 💧"],
+      correctAnswer: 1,
+      explanation: "U xuddi ko'p qavatli bino kabi ma'lumotni qavatma-qavat tekshiradi."
+    },
+    {
+      question: "1-qavat (kirish qismi) nima qiladi?",
+      options: ["Javob beradi", "Uxlaydi", "Rasmni ko'radi 👀", "Raqsga tushadi 💃"],
+      correctAnswer: 2,
+      explanation: "Birinchi qavat faqat rasmni yoki ma'lumotni qabul qiladi."
+    }
+  ],
+  "Rasmchi Robot (Generativ AI)": [
+    {
+      question: "Generativ AI nima qiladi?",
+      options: ["Faqat hisoblaydi 🧮", "Yangi narsa yaratadi 🎨", "O'yin o'ynaydi 🎮", "Tozalik qiladi 🧹"],
+      correctAnswer: 1,
+      explanation: "Generativ AI yangi rasmlar, hikoyalar va musiqalar yaratadi."
+    },
+    {
+      question: "Agar 'Pushti fil' desang, u nima qiladi?",
+      options: ["Kuladi 😂", "Pushti fil rasmini chizadi 🐘", "Hech narsa 🤷", "Seni urshadi 😠"],
+      correctAnswer: 1,
+      explanation: "U sening so'zlaringni tushunib, shunga mos rasm chizib beradi."
+    },
+    {
+      question: "AI nima yoza oladi?",
+      options: ["Faqat raqamlar", "Ertak va hikoyalar 📚", "Faqat ismlar", "Hech narsa"],
+      correctAnswer: 1,
+      explanation: "Ular ajoyib ertaklar va she'rlar yoza olishadi."
+    }
+  ],
+  "Robotlar": [
+     {
+      question: "Robotlarning yuragi bormi?",
+      options: ["Ha, albatta ❤️", "Yo'q, ularda protsessor bor 💻", "Ularning qorni bor", "Bilmayman"],
+      correctAnswer: 1,
+      explanation: "Robotlarda yurak o'rniga kompyuter miyasi va batareya bor."
+    },
+    {
+      question: "Eng aqlli robot nima qila oladi?",
+      options: ["O'rganadi 🧠", "Faqat yuradi", "Faqat gapiradi", "Uxlaydi"],
+      correctAnswer: 0,
+      explanation: "Eng aqlli robotlar xatolaridan o'rganib, yanada aqlli bo'lishadi."
+    },
+    {
+      question: "Robotlar charchaydimi?",
+      options: ["Ha, juda", "Yo'q, faqat quvvati tugaydi 🔋", "Kechasi uxlaydi", "Tushlikka chiqadi"],
+      correctAnswer: 1,
+      explanation: "Robotlar charchamaydi, lekin batareyasi tugasa o'chib qoladi."
+    }
+  ],
+  "Kelajak": [
+      {
+      question: "Kelajakda mashinalar qanday bo'ladi?",
+      options: ["Uchadigan 🛸", "Ot qo'shilgan 🐎", "Yurmaydigan", "Ko'rinmas"],
+      correctAnswer: 0,
+      explanation: "Kelajakda uchar mashinalar va haydovchisiz taksilar bo'lishi mumkin."
+    },
+    {
+      question: "Uyimiz aqlli bo'lsa nima qiladi?",
+      options: ["Biz bilan gaplashadi 🏠", "Qochib ketadi", "Raqsga tushadi", "Yig'laydi"],
+      correctAnswer: 0,
+      explanation: "Aqlli uylar chiroqni o'zi yoqadi, eshikni ochadi va bizga yordam beradi."
+    },
+    {
+      question: "Kelajakni kim yaratadi?",
+      options: ["Faqat kattalar", "Biz - bolalar! 👧👦", "O'zga sayyoraliklar", "Sehrgarlar"],
+      correctAnswer: 1,
+      explanation: "Kelajakni bugungi bilimli bolalar, ya'ni sizlar yaratasiz!"
+    }
+  ]
+};
