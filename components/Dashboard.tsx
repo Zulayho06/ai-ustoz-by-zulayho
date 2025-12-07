@@ -26,13 +26,22 @@ const Dashboard: React.FC<DashboardProps> = ({ onChangeView }) => {
                 <p className="text-purple-100 text-xl font-medium max-w-lg mb-8 leading-relaxed">
                   Robo-do'sting seni kutmoqda. Keling, birgalikda sehrli texnologiyalar olamiga sayohat qilamiz!
                 </p>
-                <button 
-                    onClick={() => onChangeView(AppView.LESSON)}
-                    className="bg-yellow-400 text-purple-900 font-black py-4 px-10 rounded-full hover:bg-yellow-300 transition-all shadow-[0_10px_20px_rgba(250,204,21,0.4)] flex items-center gap-3 text-lg transform hover:-translate-y-1"
-                >
-                    <Rocket className="w-6 h-6 fill-current" />
-                    Sayohatni Boshlash
-                </button>
+                
+                <div className="flex flex-col sm:flex-row items-center gap-6">
+                    <button 
+                        onClick={() => onChangeView(AppView.LESSON)}
+                        className="bg-yellow-400 text-purple-900 font-black py-4 px-10 rounded-full hover:bg-yellow-300 transition-all shadow-[0_10px_20px_rgba(250,204,21,0.4)] flex items-center gap-3 text-lg transform hover:-translate-y-1"
+                    >
+                        <Rocket className="w-6 h-6 fill-current" />
+                        Sayohatni Boshlash
+                    </button>
+                    
+                    {/* Author Badge in Hero */}
+                    <div className="flex items-center gap-2 bg-purple-900/30 px-4 py-2 rounded-2xl border border-purple-400/30 backdrop-blur-sm">
+                        <span className="text-purple-200 text-xs font-bold uppercase">Muallif:</span>
+                        <span className="text-white font-black text-sm">Qadamova Zulayho</span>
+                    </div>
+                </div>
             </div>
             <div className="hidden md:block relative animate-float">
                 <div className="w-64 h-64 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border-4 border-white/20">

@@ -115,9 +115,16 @@ const Layout: React.FC<LayoutProps> = ({ currentView, onChangeView, children }) 
       )}
 
       {/* Main Content Area */}
-      <main className="flex-1 md:ml-72 pt-24 md:pt-0 min-h-screen transition-all duration-300 bg-sky-50 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]">
-        <div className="max-w-6xl mx-auto p-4 md:p-8">
+      <main className="flex-1 md:ml-72 pt-24 md:pt-0 min-h-screen transition-all duration-300 bg-sky-50 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] flex flex-col">
+        <div className="max-w-6xl mx-auto p-4 md:p-8 flex-1 w-full">
             {children}
+        </div>
+        
+        {/* Footer for Author Visibility on all pages */}
+        <div className="text-center py-6 opacity-60 hover:opacity-100 transition-opacity mt-auto">
+            <p className="text-sm font-bold text-slate-400">
+                Loyiha muallifi: <span className="text-sky-600 font-black bg-sky-100 px-2 py-0.5 rounded-lg">Qadamova Zulayho</span>
+            </p>
         </div>
       </main>
     </div>
